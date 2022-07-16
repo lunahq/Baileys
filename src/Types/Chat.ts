@@ -68,6 +68,7 @@ export type ChatModification =
             star: boolean
         }
     } |
+    { labeled: boolean; labelJid: string } |
     {
         markRead: boolean
         lastMessages: LastMessageList
