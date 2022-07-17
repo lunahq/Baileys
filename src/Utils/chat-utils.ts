@@ -696,8 +696,16 @@ export const processSyncAction = (
 		ev.emit('messages.update', [
 			{
 				key: { remoteJid: id, id: msgId, fromMe: fromMe === '1' },
-				update: { starred }
-			}
+				update: { starred },
+			},
+		])
+	} else if(action?.labelAssociationAction) {
+		console.log('labelAssociationAction', syncAction.index)
+		ev.emit('chats.update', [
+			{
+				id: syncAction.index[2],
+				label: { [syncAction.index[1]]: action.labelAssociationAction.labeled as boolean },
+			},
 		])
 	} else if(action?.deleteChatAction || type === 'deleteChat') {
 		if(

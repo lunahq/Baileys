@@ -39,6 +39,7 @@ export type Chat = proto.IConversation & {
     /** timestamp of when pinned */
     pin?: number | null
     archive?: boolean
+    label?: {[labelJid: string]: boolean}
 }
 
 /**
