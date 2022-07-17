@@ -700,7 +700,6 @@ export const processSyncAction = (
 			},
 		])
 	} else if(action?.labelAssociationAction) {
-		console.log('labelAssociationAction', syncAction.index)
 		ev.emit('chats.update', [
 			{
 				id: syncAction.index[2],
