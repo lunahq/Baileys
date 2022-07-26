@@ -728,10 +728,9 @@ export const processSyncAction = (
 		) {
 			ev.emit('chats.delete', [id])
 		}
-	} else if(action?.timestamp) {
-		return
 	} else {
-		logger?.warn({ syncAction, id }, 'unprocessable update')
+		// logger?.warn({ syncAction, id }, 'unprocessable update')
+		return
 	}
 
 	function isValidPatchBasedOnMessageRange(id: string, msgRange: proto.ISyncActionMessageRange | null | undefined) {
