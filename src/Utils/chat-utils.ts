@@ -728,6 +728,8 @@ export const processSyncAction = (
 		) {
 			ev.emit('chats.delete', [id])
 		}
+	} else if(action?.timestamp) {
+		return null
 	} else {
 		logger?.warn({ syncAction, id }, 'unprocessable update')
 	}
