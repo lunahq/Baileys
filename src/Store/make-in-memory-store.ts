@@ -139,7 +139,7 @@ export default (
 				try {
 					chats.deleteById(item)
 				} catch(error) {
-					console.error(error)
+					console.error('catched error: ', error)
 				}
 			}
 		})
