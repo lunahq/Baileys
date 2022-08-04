@@ -136,7 +136,11 @@ export default (
 		})
 		ev.on('chats.delete', deletions => {
 			for(const item of deletions) {
-				chats.deleteById(item)
+				try {
+					chats.deleteById(item)
+				} catch(error) {
+					console.error(error)
+				}
 			}
 		})
 		ev.on('messages.upsert', ({ messages: newMessages, type }) => {
