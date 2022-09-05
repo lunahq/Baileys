@@ -52,32 +52,27 @@ export type ChatModification =
     {
         archive: boolean
         lastMessages: LastMessageList
-    } |
-    {
-        pushNameSetting: string
-    } |
-    {
-        pin: boolean
-    } |
-    {
+    }
+    | { pushNameSetting: string }
+    | { pin: boolean }
+    | {
         /** mute for duration, or provide timestamp of mute to remove*/
         mute: number | null
-    } |
-    {
+    }
+    | {
         clear: 'all' | { messages: {id: string, fromMe?: boolean, timestamp: number}[] }
-    } |
-    {
+    }
+    | {
         star: {
             messages: { id: string, fromMe?: boolean }[],
             star: boolean
         }
     } |
-    { labeled: boolean; labelJid: string } |
     {
         markRead: boolean
         lastMessages: LastMessageList
-    } |
-    { delete: true, lastMessages: LastMessageList }
+    }
+    | { delete: true, lastMessages: LastMessageList }
 
 export type InitialReceivedChatsState = {
     [jid: string]: { lastMsgRecvTimestamp: number }

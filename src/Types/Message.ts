@@ -16,7 +16,9 @@ export type WATextMessage = proto.Message.IExtendedTextMessage
 export type WAContextInfo = proto.IContextInfo
 export type WALocationMessage = proto.Message.ILocationMessage
 export type WAGenericMediaMessage = proto.Message.IVideoMessage | proto.Message.IImageMessage | proto.Message.IAudioMessage | proto.Message.IDocumentMessage | proto.Message.IStickerMessage
+// eslint-disable-next-line no-unused-vars
 export import WAMessageStubType = proto.WebMessageInfo.StubType
+// eslint-disable-next-line no-unused-vars
 export import WAMessageStatus = proto.WebMessageInfo.Status
 export type WAMediaUpload = Buffer | { url: URL | string } | { stream: Readable }
 /** Set of message types that are supported by the library */
@@ -73,7 +75,7 @@ type WithDimensions = {
     width?: number
     height?: number
 }
-export type MediaType = 'image' | 'video' | 'sticker' | 'audio' | 'document' | 'history' | 'md-app-state'
+export type MediaType = 'image' | 'video' | 'sticker' | 'audio' | 'document' | 'history' | 'md-app-state' | 'product-image'
 export type AnyMediaMessageContent = (
     ({
         image: WAMediaUpload
